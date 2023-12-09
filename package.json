@@ -1,0 +1,11 @@
+{
+  "name": "networking",
+  "version": "1.0.0",
+  "description": "project simulation simple network using OOP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
