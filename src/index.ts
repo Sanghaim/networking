@@ -16,9 +16,10 @@ app.listen(port, () => {
   const pc1 = new Computer("PC1");
   const server = new Server("Server");
   pc1.joinNetwork(server);
+  server.addToRoutingTable(pc1.name, pc1.getAddress());
   console.log("PC", util.inspect(pc1, false, null, true));
-
   console.log("Server", util.inspect(server, false, null, true));
   pc1.setAddress("bullshit");
+  server.updateAddressEntry(pc1.name, pc1.getAddress());
   console.log("updated address\n", util.inspect(server, false, null, true));
 });

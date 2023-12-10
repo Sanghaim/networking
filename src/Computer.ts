@@ -2,8 +2,8 @@ import NetworkCard from "./NetworkCard";
 import Server from "./Server";
 
 export default class Computer {
-  _networkCard: NetworkCard;
-  _name: string;
+  protected _networkCard: NetworkCard;
+  protected _name: string;
 
   constructor(name: string) {
     this._name = name;
@@ -46,6 +46,5 @@ export default class Computer {
   joinNetwork(server: Server) {
     this.setAddress(server.assignAddress());
     this.setGateway(server);
-    server.addToRoutingTable(this.name, this.getAddress());
   }
 }

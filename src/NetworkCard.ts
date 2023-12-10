@@ -54,7 +54,6 @@ export default class NetworkCard {
     if (this.gateway === undefined) {
       throw new Error("Gateway is not set");
     }
-    this._gateway?.updateAddressEntry(name, this.address);
   }
 
   deleteFromRoutingTable(name: string) {

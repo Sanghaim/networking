@@ -27,7 +27,6 @@ export default class Server extends Computer {
   }
 
   updateAddressEntry(name: string, address: string) {
-    // this.localNetwork = this.localNetwork.filter((node) => node.name !== name);
     this._networkCard.deleteFromRoutingTable(name);
     this.addToRoutingTable(name, address);
   }
