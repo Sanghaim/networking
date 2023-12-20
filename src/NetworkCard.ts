@@ -28,17 +28,14 @@ export default class NetworkCard {
   }
 
   ping(address: string): string {
-    /*     if (!this.gateway) {
+    if (!this.gateway) {
       throw new Error("No network found");
     }
     try {
-      return this.gateway.pong();
+      return this.gateway.resolvePing(address);
     } catch (e) {
-      if (e instanceof Error) {
-        return e.message;
-      }
       return String(e);
-    } */
+    }
     return "";
   }
 

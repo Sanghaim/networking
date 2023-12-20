@@ -14,12 +14,14 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 
   const pc1 = new Computer("PC1");
+  const pc2 = new Computer("PC2");
   const server = new Server("Server");
   pc1.joinNetwork(server);
-  server.addToRoutingTable(pc1.name, pc1.getAddress());
-  console.log("PC", util.inspect(pc1, false, null, true));
-  console.log("Server", util.inspect(server, false, null, true));
+  server.addToLocalNetwork(pc1);
+  pc2.joinNetwork(server);
+  server.addToLocalNetwork(pc2);
   pc1.setAddress("bullshit");
   server.updateAddressEntry(pc1.name, pc1.getAddress());
-  console.log("updated address\n", util.inspect(server, false, null, true));
+  // console.log("updated address\n", util.inspect(server, false, null, true));
+  console.log(pc1.ping(pc2.getAddress()));
 });
